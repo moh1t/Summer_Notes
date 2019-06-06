@@ -1,0 +1,94 @@
+Big data-- 
+    - Huge Amount
+    - type of data
+        1. Structered - DBMS, Xls, CSV
+        2. Semi Structered - HTML JSON XML
+        3. Un Structered - Image, Video --> No Use for Computer or general computer cant understand without ML.
+
+    Bigdata - Problem
+    Hadoop - Solution
+
+    Data --> [Process] --> Info.
+
+    Hadoop --> Framework 
+
+    Problem 1-
+        Storage -- > HDFS --> Hadoop distributed file system
+
+                                                         |--- Slave(data Node)  
+                                                         |--- Slave(data Node)
+        data generaotor ---Master(Name Node /metadata) --|--Slave(data Node)
+                                                         |-- Slave(data Node)
+                                                         |--Slave(data Node)
+                fig- Hadoop Cluster
+        
+        Master- Name Node -- High CPU, RAM low Harddisk
+        Slave - Data Node -- LOW CPU, RAM (even 5 mb) , High HARD Disk
+
+
+    Google - Cloop -- Cloud + Hadoop
+
+    Common steps - For name and data
+
+    hadoop2/etc/hadoop/hadoop-env.sh --> To tell hadoop the path of the java
+     " /hdfs-site.xml --> To tell about name node and data node.
+
+     Name Node -format. A structure to store info or metadata . A fix format.
+     hdfs-
+     Name Node ip : 50070 is the hdfs portal by default
+     Hadoop2 --> default Minimum Block size - 128
+                Default replecation factor - 3
+
+        WORM -- Write once read many -- File cannot be overwritten . Delete Previous and Upload new. 
+
+         hdfs dfs -ls /
+         hdfs dfs -mkdir /facebook 
+
+         hdfs dfs -put aa.txt /facebook
+
+
+         blog --> slashbigdata ---> Hadoop1 vs hadoop2
+
+         Single node cluster -- Datanode and namenode on single machine
+         Multinode cluster -- different different datanode and name node
+
+         SudoDistributed cluster 
+         Fully Distributed cluster
+         No distributed cluster
+
+    Setup hadoop.. 
+            Download jdk and install via rpm 
+            Download hadoop tar.gz file unzip to /hadoop2
+        set java and hadoop path to 
+            /root/.bashrc
+                JAVA_HOME=/usr/java/jdk1.8...
+            and /hadoop2/etc/hadoop/hadoop-env.sh
+
+YARN ---> Distributed data processing --
+    [Resource manager ---(scheduler, Application manager)]
+
+    [node manager -- (container/jvm) + (app Master)]
+
+hdfs dfs -moveFromLocal #data to be moved to hdfs# #hadoop directory where data is to be moved#
+
+cd /hadoop2/share/hadoop/mapreduece 
+yarn jar hadoop-mapreduce-examples ---> To run jar file in hadoop user yarn jar ---> to check all function s available
+
+To run a function --
+
+yarn jar hadoop-mapreduce-examples ... #function like word count# # data to be processed path # #a new directory to store output # #Word to be searched if grep or any thing similar used#
+
+Scheduler ---
+    1. FIFO -Hadoop1
+    2. FAIR --Hadoop2 -Yarn default 
+    3. Capacity scheduler when capacity or resource needed for jop is known already 
+
+Map -reduces -- Two functions to get hte job done 
+    Works in key pair
+
+    Mapper --
+        Splits data row wise 
+        Mapping 
+        shuffling
+    Now Reducer
+    Final result 
