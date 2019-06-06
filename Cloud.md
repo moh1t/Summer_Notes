@@ -136,4 +136,16 @@ Analytics -->
 Glacier is not auto scalable. --> You need to enable Auto scaling differnetly.
 
 
+EFS --
+    Elastic File system.
+        Uses NFS in backend. Shared storage file system .
+        Access of different availablity zone. in single region.
+        Lifecycle. 
+        IOPS -- 
+            Input output process per second.
+            Different regions Has different IOPS. 
+        Encryption possible. Block Storage..
+
+        EFs and EC2 must be in same region. Can be in different availabllty zone..
+            In EC2 -- port 2049 must be enabled for NFS .. --> to attach an EFS.
         
