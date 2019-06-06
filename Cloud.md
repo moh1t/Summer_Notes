@@ -141,11 +141,21 @@ EFS --
         Uses NFS in backend. Shared storage file system .
         Access of different availablity zone. in single region.
         Lifecycle. 
+        No limit on size 52TB Max for individual files. 
+        No Public access Possible.. 
+
         IOPS -- 
-            Input output process per second.
-            Different regions Has different IOPS. 
+            Input/output operations per second.
+            Different regions Has different IOPS.
+            Order
+                Provision storage 16k \/
+                EFS 7k                \/
+                EBS 3k                \/
         Encryption possible. Block Storage..
 
         EFs and EC2 must be in same region. Can be in different availabllty zone..
             In EC2 -- port 2049 must be enabled for NFS .. --> to attach an EFS.
-        
+
+SLA --> Service level agreement. 
+EBS --> Max size possible 16 TB, No file size limit by EBS is set by file system used to format EBs
+S3 --> No limit on size. Indvidual Objects can be upto. --> 5TB
