@@ -159,3 +159,11 @@ EFS --
 SLA --> Service level agreement. 
 EBS --> Max size possible 16 TB, No file size limit by EBS is set by file system used to format EBs
 S3 --> No limit on size. Indvidual Objects can be upto. --> 5TB
+
+VPC --> Network as a service..
+        -Router --(Dosen't shows up)
+        -ACL
+        -Security Group
+        -routing table 
+
+VPC peering -- conecting one vpc with another vpc without public ip.
