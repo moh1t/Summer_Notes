@@ -178,3 +178,28 @@ process to be followed -->
         Dest. 0.0.0.0/0 -- choose Gateway type..
     5. Enale Auto assign public ipv4 address. --> so that a public ip is auto assigned to the instance launched in the vpc. So that we can access the instance via public ipv4 address.
     6. Launch an EC 2 instance --> with our own vpc. and subnet. --> instance will get the private ip in accordance to the lab/subnet  of vpc choosen to for the instance. 
+
+JUMP SERVER -->  
+    Server which has public ip in multi tier architecture. or instance through which we can access other instance without public ip
+
+Public Subnet --> 
+    Subnet in which instances need the public ip. like apache , name node, resource manager. Jump server will be in oublic subnet.
+
+Private subnet -->
+    In which instance dosent need public ip. Like database, datanode in hadoop, nodemanager.
+
+Create own Gateway --
+    like physical routers .
+    Which provides internet connection to PC without public ip because internet can be accessed only after public ip.
+    NAT gatway public ami amazon. it must have a public ip. This will provide internet through private instance by forwarding its own public ip.
+    Create a new routing table which forwards. private lab machine internet requests. 
+    At instance for NAT gateway -->
+        network setting 
+            Check Source destination ----## Disable..
+            Enable Inbounds --> the port from which private lab , machines are going to request for connection. like or ping enable icmp , http for yum , ftp & so on.
+
+
+
+
+
+
