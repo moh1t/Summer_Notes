@@ -167,3 +167,14 @@ VPC --> Network as a service..
         -routing table 
 
 VPC peering -- conecting one vpc with another vpc without public ip.
+
+VPC -- Same private ip labs as of Your local labs. Generally default vpc on aws assign private ip in the series of 172.... , Through our own vpc we can decide the series of ip like -- 192.168.. , then we can create diffrent diffrent ip group / labs inside of this. 
+we will get 5 ip less means a total of 251 ips inside a lab of 192.168.10.0/24 series . --> These 5 ips are used for DNS(254), GATEWAY() , broadcast(255), Future reserve, one for itself(0).
+process to be followed -->
+    1. create a vpc . -- (192.168.0.0/16) -> can include upto 65536 ips. 
+    2. create subnets. -- 192.168.10.0/24 -> can accomodate upto 256 ips total. 
+    3. Create gatway  --> Unique for each vpc throw which it connects to outside internet. Everyone want to access ips outside to the vpc must have to go throw it.
+    4. Entry to Route table -- If any ip want to access any ip it check for route tabel or routing table. Where i have to go . oute table generally includes efficient way or routes to reach any perticular nodes / ip inside or outside to the vpc. includes the address of gateway for any ip.
+        Dest. 0.0.0.0/0 -- choose Gateway type..
+    5. Enale Auto assign public ipv4 address. --> so that a public ip is auto assigned to the instance launched in the vpc. So that we can access the instance via public ipv4 address.
+    6. Launch an EC 2 instance --> with our own vpc. and subnet. --> instance will get the private ip in accordance to the lab/subnet  of vpc choosen to for the instance. 
