@@ -92,3 +92,84 @@ Map -reduces -- Two functions to get hte job done
         shuffling
     Now Reducer
     Final result 
+
+
+DATA ANALYTICS --->
+    Analytics and visualization ---> Apaache databricks.
+                                            /\
+                            Apache spark --<  >--- AWS
+
+    Big data hadoop -->     HDFS + YARN + HIVE (SQL Process) +
+
+    Matplotlib + Apache Mahout(For ML on data bricks)  + Big data ==> Data bricks 
+
+    Free --> 15 days free trial for an email + 6 GB ram instance on AWS free .
+
+Python data visualization or analysis 
+    Matplotlib 
+    Seaborn 
+    Pyplot 
+
+Apache spark is backend of Databricks.
+
+Reason behind speed of spark --> In memory processing --> processes data in RAM, 
+
+Apache Spark --> 
+    supports upto 4 languages -
+        1. Python - can process max upto -- 10GB -> Pyspark 
+        2. Scala --> can process more tahn java.  
+        3. R
+        4. java
+    spark designed in scala language.
+
+jupyter notebook 
+import findspark
+findspark.init('/spark')
+import pyspark
+from pyspark import Spark.Context //Blog --> slashbigdata
+
+x = SparkContext
+frdd = x.textFile('/etc/passwd')
+
+frdd.first()
+//For first line 
+frdd.take(3)
+// For first 3 lines.f
+
+
+
+
+    // pyhton --> findspark --> spark --> pyspark 
+
+RDD --> Resilient Distributed datasets --> Main component of spark 
+    File loaded in ram by one user and one program , it will be distributed over ram on entire cluster. 
+    lazy -- RDD --> Main concept of spark.
+    We hav to make RDD in spark -- it is state of data which could be after either loading file after word count and etc..
+
+    spark ----> Core operation
+                    \--> action --> Performs action on data
+                     \--> transform  --> Convert data to spark understandable manner
+    Spark --> HDFS + YARN
+                |
+                \
+                 > WORM --> Write once read many
+    Spark has its own storage it can use it and it also can use hadoop as storage.
+
+    -> Spark SQL --> 
+            \-->
+    
+    -> Spark MLib -->
+            \-->    Machine learning
+
+    -> Spark Dgraph
+            \--> Matplotlib is better
+    -> Spark Streaming 
+            \--> For live data streaming 
+    
+    Spark uses in memory function thats why it is 100X Faster than other big data analytics techniques like Hadoop and Yarn.
+
+
+Study Google  --> Lambda function in python --> lambda function
+    --> file- wordcount - graph
+
+
